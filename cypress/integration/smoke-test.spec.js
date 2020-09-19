@@ -11,6 +11,7 @@ describe("Smoke test", () => {
       { test: "Buy eggs", expectedLength: 2 },
       { test: "Buy bread", expectedLength: 3 },
     ];
+
     it("Saves new todos", () => {
       cy.visit("/");
       cy.server();
@@ -58,6 +59,7 @@ describe("Smoke test", () => {
 
         cy.wait("@update");
       };
+
       cy.server();
       cy.route("PUT", "/api/todos/*").as("update");
 
