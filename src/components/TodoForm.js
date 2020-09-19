@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
-export default props =>
-  <form>
+export default (props) => (
+  <form onSubmit={props.handleAddTodo}>
     <input
-      type='text'
+      autoFocus
+      type="text"
       className="new-todo"
-      placeholder="What needs to be done?"/>
+      value={props.currentTodo}
+      onChange={props.handleCurrentTodo}
+      placeholder="What needs to be done?"
+    />
   </form>
+);
